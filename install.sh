@@ -2,6 +2,8 @@
 
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/alacritty ~/.config/alacritty
-# ln ~/.dotfiles/.tmux.conf ~/
+ln ~/.dotfiles/.tmux.conf ~/
 
-echo "symlinked .dotfiles! 👺"
+sudo apt install sl
+
+echo "👺  !symlinked .dotfiles! 👺"
