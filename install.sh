@@ -9,6 +9,7 @@ ln -sf ~/.dotfiles/alacritty ~/.config/alacritty
 ln ~/.dotfiles/.tmux.conf ~/
 ln -sf ~/.dotfiles/helix ~/.config/helix
 ln ~/.dotfiles/.bashrc ~/
+ln ~/.dotfiles/.bash-completion ~/
 
 sudo apt install sl
 
