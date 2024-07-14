@@ -1,4 +1,5 @@
-theme = "autumn"
+# theme = "autumn"
+theme = "gruvbox"
 
 [editor]
 line-number = "relative"
