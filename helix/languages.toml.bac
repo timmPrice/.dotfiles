@@ -1,0 +1,8 @@
+[[language]]
+name = "go"
+scope = "source.go"
+injection-regex = "go"
+file-types = ["go"]
+language-servers = "gopls"
+auto-format = true
+

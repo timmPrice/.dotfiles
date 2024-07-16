@@ -6,6 +6,9 @@ sudo apt update
 sudo apt install helix
 rm -r ~/.config/helix
 
+# installing i3
+sudo apt-get install i3
+
 # symlinking .config files
 ln -sf ~/repos/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/repos/.dotfiles/alacritty ~/.config/alacritty
