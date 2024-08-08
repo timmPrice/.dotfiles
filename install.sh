@@ -15,18 +15,18 @@ fi
 
 sudo apt update && upgrade
 
+# cli tools
+sudo apt install wget
+sudo apt install curl
+sudo ap install snapd
+
 sudo apt install tmux
 sudo apt install neovim
-sudo apt install i3
 sudo apt install kitty
 sudo apt install zsh
 sudo apt install discord
 sudo apt install steam
-sudo apt install foliate
-
-# cli tools
-sudo apt install wget
-sudo apt install curl
+sudo apt install gnome-tweaks
 
 # programming
 # install go
@@ -37,6 +37,9 @@ sudo apt install pip
 
 #dotnet
 
+sudo snap install foliate
+sudo snap install obsidian
+
 echo "🍜 finished installing dependencies 🍜"
 
 #-----------------------------------------------
@@ -45,7 +48,7 @@ echo "🍜 finished installing dependencies 🍜"
 
 ln -sf ~/repos/.dotfiles/nvim ~/.config/nvim
 ln ~/repos/.dotfiles/zsh/.zshrc ~/
-ln -sf ~/repos/.dotfiles/zsh/.oh-my-zsh ~/.zshrc
+ln -sf ~/repos/.dotfiles/zsh/.oh-my-zsh ~/
 
 # i3 window manager
 # ln -sf ~/repos/.dotfiles/i3 ~/.config/i3
@@ -55,6 +58,7 @@ ln -sf ~/repos/.dotfiles/zsh/.oh-my-zsh ~/.zshrc
 
 ln -sf ~/repos/.dotfiles/kitty ~/.config/kitty
 ln ~/repos/.dotilfes/.tmux.conf ~/
+ln ~/repos/.dotfiles/.gitconfig ~/
 
 echo "🍜 finished symlinked config files 🍜"
 

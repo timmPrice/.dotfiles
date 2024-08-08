@@ -1,5 +1,9 @@
 #!/bin/bsh
 
+#------------------------
+# OLD INSTALL SCRIPT! 
+#------------------------
+
 # adding and installing helix editor
 sudo add-apt-repository ppa:maveonair/helix-editor
 sudo apt update
