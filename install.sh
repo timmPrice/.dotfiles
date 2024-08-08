@@ -1,23 +1,82 @@
-#!/bin/bsh
+#!bin/sh
 
-# adding and installing helix editor
-sudo add-apt-repository ppa:maveonair/helix-editor
-sudo apt update
-sudo apt install helix
-rm -r ~/.config/helix
+#-----------------------------------------------
+# Timothy Price Automated Linux Desktop Install
+#-----------------------------------------------
 
-# installing i3
-sudo apt-get install i3
+# sanity check
 
-# symlinking .config files
+CURR_OS=$(uname)
+
+if [[ "$CURR_OS" != *"Linux"* ]]; then
+    echo "ERROR --> Incorrect OS for this target!"
+    exit
+fi
+
+sudo apt update && upgrade
+
+sudo apt install tmux
+sudo apt install neovim
+sudo apt install i3
+sudo apt install kitty
+sudo apt install zsh
+sudo apt install discord
+sudo apt install steam
+sudo apt install foliate
+
+# cli tools
+sudo apt install wget
+sudo apt install curl
+
+# programming
+# install go
+# install cargo
+# install ocaml
+sudo apt install python3 
+sudo apt install pip
+
+#dotnet
+
+echo "🍜 finished installing dependencies 🍜"
+
+#-----------------------------------------------
+# 		Symlinking Files 
+#-----------------------------------------------
+
 ln -sf ~/repos/.dotfiles/nvim ~/.config/nvim
-ln -sf ~/repos/.dotfiles/alacritty ~/.config/alacritty
-ln ~/repos/.dotfiles/.tmux.conf ~/
-ln -sf ~/repos/.dotfiles/helix ~/.config/helix
-ln ~/repos/.dotfiles/.bashrc ~/
-cp ~/repos/.dotfiles/.bash-completion ~/
+ln ~/repos/.dotfiles/zsh/.zshrc ~/
+ln -sf ~/repos/.dotfiles/zsh/.oh-my-zsh ~/.zshrc
 
-#goofy ahh program
-sudo apt install sl
+# i3 window manager
+# ln -sf ~/repos/.dotfiles/i3 ~/.config/i3
 
-echo "🍜 !symlinked .dotfiles! 🍜"
+# Hyprland window manager
+# ln -sf ~/repos/.dotfiles/hypr ~/.config/hypr
+
+ln -sf ~/repos/.dotfiles/kitty ~/.config/kitty
+ln ~/repos/.dotilfes/.tmux.conf ~/
+
+echo "🍜 finished symlinked config files 🍜"
+
+#-----------------------------------------------
+# 		      zsh
+#-----------------------------------------------
+
+chsh -s $(which zsh)
+sudo update-alternatives --config x-terminal-emulator
+
+#-----------------------------------------------
+# 		      QMK 
+#-----------------------------------------------
+
+#-----------------------------------------------
+# 		     Fonts
+#-----------------------------------------------
+
+#-----------------------------------------------
+# 		      Git
+#-----------------------------------------------
+
+git config --global user.email "timmPrice6@gmail.com" 
+git config --global user.name "timmPrice" 
+zsh ssh.sh
