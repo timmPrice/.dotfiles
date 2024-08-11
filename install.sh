@@ -13,6 +13,7 @@ if [[ "$CURR_OS" != *"Linux"* ]]; then
     exit
 fi
 
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update && upgrade
 
 # cli tools
@@ -35,8 +36,16 @@ sudo apt install gnome-tweaks
 sudo apt install python3 
 sudo apt install pip
 
+# js/ts
+sudo apt install npm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 20
+node -v
+npm -v
+
 #dotnet
 
+# misc tools
 sudo snap install foliate
 sudo snap install obsidian
 
