@@ -4,6 +4,8 @@
 # Timothy Price Automated Linux Desktop Install
 #-----------------------------------------------
 
+# some ideas about rewriting in python or js to make for exmaple all packages in an array
+
 # sanity check
 
 CURR_OS=$(uname)
@@ -36,7 +38,7 @@ sudo apt install gnome-tweaks
 sudo apt install python3 
 sudo apt install pip
 
-# js/ts
+# js/ts -- TODO -- add jsr and deno tools for js
 sudo apt install npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 nvm install 20
@@ -44,6 +46,9 @@ node -v
 npm -v
 
 #dotnet
+
+sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-8.0
 
 # misc tools
 sudo snap install foliate
