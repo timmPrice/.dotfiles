@@ -1,8 +1,8 @@
 #!bin/sh
 
-#-----------------------------------------------
-# Timothy Price Automated Linux Desktop Install
-#-----------------------------------------------
+#-----------------------------------------------#
+# Timothy Price Automated Linux Desktop Install #
+#-----------------------------------------------#
 
 # some ideas about rewriting in python or js to make for exmaple all packages in an array
 
@@ -45,6 +45,8 @@ nvm install 20
 node -v
 npm -v
 
+npm install -D typescript
+
 #dotnet
 
 sudo apt-get update && \
@@ -56,9 +58,9 @@ sudo snap install obsidian
 
 echo "🍜 finished installing dependencies 🍜"
 
-#-----------------------------------------------
-# 		Symlinking Files 
-#-----------------------------------------------
+#--------------------------#
+#     Symlinking Files     # 
+#--------------------------#
 
 ln -sf ~/repos/.dotfiles/nvim ~/.config/nvim
 ln ~/repos/.dotfiles/zsh/.zshrc ~/
@@ -76,9 +78,9 @@ ln ~/repos/.dotfiles/.gitconfig ~/
 
 echo "🍜 finished symlinked config files 🍜"
 
-#-----------------------------------------------
-# 		      zsh
-#-----------------------------------------------
+#-------------#
+#     zsh     #
+#-------------#
 
 chsh -s $(which zsh)
 sudo update-alternatives --config x-terminal-emulator
@@ -86,17 +88,21 @@ sudo update-alternatives --config x-terminal-emulator
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-#-----------------------------------------------
-# 		      QMK 
-#-----------------------------------------------
+#-------------#
+#     QMK     # 
+#-------------#
 
-#-----------------------------------------------
-# 		     Fonts
-#-----------------------------------------------
+python3 -m pip install qmk
+export QMK_HOME='~/qmk_firmware' # Optional, set the location for `qmk_firmware`
+qmk setup  # This will clone `qmk/qmk_firmware` and optionally set up your build environment
 
-#-----------------------------------------------
-# 		      Git
-#-----------------------------------------------
+#---------------#
+#     Fonts     #
+#---------------#
+
+#-------------#
+#     Git     #
+#-------------#
 
 git config --global user.email "timmPrice6@gmail.com" 
 git config --global user.name "timmPrice" 
