@@ -63,6 +63,8 @@ echo "🍜 finished installing dependencies 🍜"
 #--------------------------#
 
 ln -sf ~/repos/.dotfiles/nvim ~/.config/nvim
+# sync packer and update shout out plugin files!
+
 ln ~/repos/.dotfiles/zsh/.zshrc ~/
 ln -sf ~/repos/.dotfiles/zsh/.oh-my-zsh ~/
 
