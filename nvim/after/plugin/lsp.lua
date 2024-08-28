@@ -2,23 +2,6 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
-})
-
--- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
-
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -65,3 +48,5 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
+lsp.setup()
