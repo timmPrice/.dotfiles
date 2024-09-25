@@ -48,3 +48,7 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 vim.keymap.set('n', '<leader><5>', vim.cmd.UndotreeToggle)
+
+-- vimtex
+vim.g.vimtex_view_method = "zathura"
+

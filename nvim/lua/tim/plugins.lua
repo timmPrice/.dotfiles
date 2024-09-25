@@ -52,4 +52,8 @@ return require('packer').startup(function(use)
       }
   }
 
+-- VimTex
+use 'lervag/vimtex'
+
 end)
+
