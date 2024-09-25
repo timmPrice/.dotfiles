@@ -129,3 +129,18 @@ unset __conda_setup
 
 
 export PATH=$PATH:~/.cargo/bin/
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/tim/.opam/opam-init/init.zsh' ]] || source '/home/tim/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
+# TeX Live 2024 configuration
+export MANPATH=/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH
+export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
+
