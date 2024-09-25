@@ -106,6 +106,12 @@ qmk setup  # This will clone `qmk/qmk_firmware` and optionally set up your build
 #     Fonts     #
 #---------------#
 
+wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+
+tar -xvzf install-tl-unx.tar.gz
+cd install-tl-* # TODO: replace * with the version gotten from the wget ^^
+sudo ./install-tl
+
 #-------------#
 #     Git     #
 #-------------#
