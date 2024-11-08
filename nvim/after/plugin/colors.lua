@@ -1,5 +1,5 @@
 function ColorThatThang(color)
-	color = color or "no-clown-fiesta"
+	color = color or "vscode"
 	vim.cmd.colorscheme(color)
 end
 

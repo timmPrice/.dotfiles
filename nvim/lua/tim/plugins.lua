@@ -10,21 +10,8 @@ return require('packer').startup(function(use)
   -- colors
   use 'kvrohit/rasmus.nvim'
   use 'aktersnurra/no-clown-fiesta.nvim'
+  use 'Mofiqul/vscode.nvim'
 
-  -- undo tree
-  use 'mbbill/undotree'
-
-  -- surround
-  use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function()
-      require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-      })
-    end
-  })
-  
   -- treesitter for syntax highlighting
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
