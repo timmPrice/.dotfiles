@@ -51,3 +51,6 @@ vim.keymap.set('n', '<leader><5>', vim.cmd.UndotreeToggle)
 
 -- vimtex
 vim.g.vimtex_view_method = "zathura"
+
+-- new save command
+   vim.api.nvim_create_user_command("W", "w", {})

@@ -11,6 +11,12 @@ return require('packer').startup(function(use)
   use 'kvrohit/rasmus.nvim'
   use 'aktersnurra/no-clown-fiesta.nvim'
   use 'Mofiqul/vscode.nvim'
+  use "blazkowolf/gruber-darker.nvim"
+  use "datsfilipe/vesper.nvim"
+
+  -- telescope
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
 
   -- treesitter for syntax highlighting
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
