@@ -20,6 +20,7 @@ sudo apt install kitty
 sudo apt install zsh
 sudo apt install gnome-tweaks
 sudo apt install git
+sudo apt install code
 
 #----------------------------------------#
 # Installing applications via Snap Store #
@@ -46,8 +47,11 @@ opam init
 eval $(opam env)
 opam install ocaml-lsp-server odoc ocamlformat utop
 
-#dotnet
+# dotnet
 sudo apt-get install -y dotnet-sdk-8.0
+
+# rust 
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 #-----------------#
 # NeoVim Packages #
@@ -65,3 +69,9 @@ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tar -xvzf install-tl-unx.tar.gz
 cd install-tl-* # TODO: replace * with the version gotten from the wget ^^
 sudo ./install-tl
+
+#------------------#
+# Tmux sessionizer #
+#------------------#
+
+cargo install tmux-sessionizer
