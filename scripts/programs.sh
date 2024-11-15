@@ -8,10 +8,7 @@
 # Installing programs #
 #---------------------#
 
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo apt update && upgrade
-
-apt_programs=(
+programs=(
     wget
     curl
     snapd
@@ -27,7 +24,21 @@ apt_programs=(
     gcc
 )
 
-sudo apt install "${apt_programs[@]}"
+if grep -q "Pop!_OS" /etc/os-release; then
+    sudo add-apt-repository ppa:neovim-ppa/unstable -y
+    sudo apt update && upgrade
+    sudo apt install "${programs[@]}"
+
+elif grep -q "Ubuntu\|Debian" /etc/os-release; then
+    sudo add-apt-repository ppa:neovim-ppa/unstable -y
+    sudo apt update && upgrade
+    sudo apt install "${programs[@]}"
+
+elif grep -q "Fedora" /etc/redhat-release; then
+    sudo dnf update
+    sudo dnf install "${programs[@]}"
+fi
+
 
 #----------------------------------------#
 # Installing applications via Snap Store #
@@ -42,15 +53,13 @@ sudo snap install discord
 #--------------------------#
 
 # Ocaml
-bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh)"
-opam init
-eval $(opam env)
-opam install ocaml-lsp-server odoc ocamlformat utop
+# bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh)"
+# opam init
+# eval $(opam env)
+# opam install ocaml-lsp-server odoc ocamlformat utop
 
 # dotnet
-sudo apt-get install -y dotnet-sdk-8.0
-
-# rust 
+# sudo apt-get install -y dotnet-sdk-8.0
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 #-----------------#
