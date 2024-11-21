@@ -12,6 +12,7 @@ programs=(
     wget
     curl
     snapd
+    snap
     nvim
     tmux
     kitty
@@ -22,6 +23,7 @@ programs=(
     python3
     pip
     gcc
+    cargo
 )
 
 if grep -q "Pop!_OS" /etc/os-release; then
@@ -66,21 +68,19 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 # NeoVim Packages #
 #-----------------#
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 
 #-------#
 # Latex #
 #-------#
 
-wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+# wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 
-tar -xvzf install-tl-unx.tar.gz
-cd install-tl-* # TODO: replace * with the version gotten from the wget ^^
-sudo ./install-tl
+# tar -xvzf install-tl-unx.tar.gz
+# sudo ./install-tl
 
 #------------------#
 # Tmux sessionizer #
 #------------------#
 
-cargo install tmux-sessionizer
+# cargo install tmux-sessionizer

@@ -5,9 +5,9 @@ ln -sf ~/repos/.dotfiles/nvim ~/.config/nvim
 
 ln -sf ~/repos/.dotfiles/zsh/.zshrc ~/
 ln -sf ~/repos/.dotfiles/kitty ~/.config/kitty
-ln ~/repos/.dotilfes/.tmux.conf ~/
+ln ~/repos/.dotfiles/.tmux.conf ~/
 ln ~/repos/.dotfiles/.gitconfig ~/
-ln -sf ~/repos/.dotfiles/tms/ ~/
+ln -sf ~/repos/.dotfiles/tms/ ~/.config
 
 # i3 window manager
 # ln -sf ~/repos/.dotfiles/i3 ~/.config/i3

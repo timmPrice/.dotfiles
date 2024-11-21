@@ -3,7 +3,6 @@
 all: run-scripts 
 
 run-scripts:
-	sudo bash scripts/check.sh
 	sudo bash scripts/programs.sh
 	sudo bash scripts/fonts.sh
 	sudo bash scripts/terminal.sh

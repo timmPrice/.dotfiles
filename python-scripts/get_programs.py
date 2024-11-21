@@ -19,6 +19,7 @@ programs = [
     "pip",
     "gcc",
     "cargo",
+    "neofetch",
 ]
 
 def install_programs(package_manager):
