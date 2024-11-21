@@ -1,0 +1,34 @@
+
+
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-PFU_Limited_HHKB-Classic-event-kbd")
+    output (uinput-sink "My KMonad output"
+    ;; To understand the importance of the following line, see the section on
+    ;; Compose-key sequences at the near-bottom of this file.
+    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+    ;; cmp-seq ralt    ;; Set the compose key to `RightAlt'
+    ;; cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+
+    fallthrough true
+    allow-cmd true
+)
+
+(defsrc
+
+    esc 1 2 3 4 5 6 7 8 9 0 - = \ grave
+    tab q w e r t y u i o p [ ] bspc 
+    lctl a s d f g h k l ; ' ret
+    lsft z x c v b n m , . / rsft 
+    lalt fn spc henkan ralt
+
+)
+
+(deflayer default
+    
+    esc 1 2 3 4 5 6 7 8 9 0 - = \ grave
+    tab o w e r t y u i o p [ ] bspc 
+    lctl a s d f g h k l ; ' ret
+    lsft z x c v b n m , . / rsft 
+    lalt fn spc p ralt
+
+)
