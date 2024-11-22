@@ -14,21 +14,31 @@
 )
 
 (defsrc
-
     esc 1 2 3 4 5 6 7 8 9 0 - = \ grave
     tab q w e r t y u i o p [ ] bspc 
-    lctl a s d f g h k l ; ' ret
-    lsft z x c v b n m , . / rsft 
-    lalt fn spc henkan ralt
+    lctl a s d f g h j k l ; ' ret
+    lsft z x c v b n m , . / rsft fn 
+    lalt muhenkan spc henkan ralt
+) 
 
+( defalias
+    ll (layer-toggle left)
 )
 
 (deflayer default
-    
     esc 1 2 3 4 5 6 7 8 9 0 - = \ grave
-    tab o w e r t y u i o p [ ] bspc 
-    lctl a s d f g h k l ; ' ret
-    lsft z x c v b n m , . / rsft 
-    lalt fn spc p ralt
-
+    tab q w e r t y u i o p [ ] bspc 
+    lctl a s d f g h j k l ; ' ret
+    lsft z x c v b n m , . / rsft fn
+    lalt @ll spc henkan ralt
 )
+
+( deflayer left
+    esc 1 2 3 4 5 6 7 8 9 0 - = \ grave
+    tab q w e r t y u i o p [ ] del 
+    lctl a s d f g left down up rght ; ' ret
+    lsft z x c v b n m , . / rsft fn
+    lalt @ll spc lmet ralt
+)
+
+
