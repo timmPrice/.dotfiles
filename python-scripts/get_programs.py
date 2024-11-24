@@ -14,12 +14,11 @@ programs = [
     "zsh",
     "gnome-tweaks",
     "git",
-    "code",
     "python3",
     "pip",
     "gcc",
     "cargo",
-    "neofetch",
+    "fish",
 ]
 
 def install_programs(package_manager):
