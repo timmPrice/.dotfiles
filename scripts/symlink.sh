@@ -8,6 +8,7 @@ ln -sf ~/repos/.dotfiles/kitty ~/.config/kitty
 ln ~/repos/.dotfiles/.tmux.conf ~/
 ln ~/repos/.dotfiles/.gitconfig ~/
 ln -sf ~/repos/.dotfiles/tms/ ~/.config
+ln -sf ~repos/.dotfiles/fish ~/.config
 
 # i3 window manager
 # ln -sf ~/repos/.dotfiles/i3 ~/.config/i3
