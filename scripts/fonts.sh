@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp ~/repos/.dotfiles/fonts/* /usr/local/share/fonts
+sudo cp ~/repos/.dotfiles/fonts/* /usr/local/share/fonts

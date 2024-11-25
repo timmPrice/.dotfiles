@@ -104,15 +104,15 @@ _G.packer_plugins = {
     path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["fizz.nvim"] = {
+    loaded = true,
+    path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/fizz.nvim",
+    url = "https://github.com/sebasruiz09/fizz.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  ["gruber-darker.nvim"] = {
-    loaded = true,
-    path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/gruber-darker.nvim",
-    url = "https://github.com/blazkowolf/gruber-darker.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -159,10 +159,10 @@ _G.packer_plugins = {
     path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["rasmus.nvim"] = {
+  ["solarized-osaka.nvim"] = {
     loaded = true,
-    path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/rasmus.nvim",
-    url = "https://github.com/kvrohit/rasmus.nvim"
+    path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/solarized-osaka.nvim",
+    url = "https://github.com/craftzdog/solarized-osaka.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

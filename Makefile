@@ -3,7 +3,7 @@
 all: run-scripts 
 
 run-scripts:
-	sudo bash scripts/programs.sh
+	python3 python-scripts/install.py	
 	sudo bash scripts/fonts.sh
 	sudo bash scripts/terminal.sh
 	sudo bash scripts/ssh.sh

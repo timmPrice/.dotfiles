@@ -1,11 +1,6 @@
 function ColorThatThang(color)
-	color = color or "gruber-darker"
+	color = color or "solarized-osaka"
 	vim.cmd ("colorscheme " .. color)
 end
 
-ColorThatThang()
-ColorThatThang("vesper")
-ColorThatThang("rasmus")
-ColorThatThang("vscode")
-ColorThatThang("no-clown-fiesta")
-
+ColorThatThang("solarized-osaka")
