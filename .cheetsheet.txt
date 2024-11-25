@@ -7,3 +7,7 @@ dpkg-query -f '${binary:Package}\n' -W > pkglist.txt
 git mergetool
 git config merge.tool nvimdiff
 # merge tool tutorial ~ https://stackoverflow.com/questions/161813/how-do-i-resolve-merge-conflicts-in-a-git-repository
+
+
+# move something to path
+export PATH="$PATH:/home/tim/the-file/directory"
