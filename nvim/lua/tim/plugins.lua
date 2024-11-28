@@ -10,9 +10,8 @@ return require('packer').startup(function(use)
   -- colors
   use 'aktersnurra/no-clown-fiesta.nvim'
   use 'Mofiqul/vscode.nvim'
-  use "datsfilipe/vesper.nvim"
-  use "sebasruiz09/fizz.nvim"
   use "craftzdog/solarized-osaka.nvim"
+  use "rose-pine/neovim"
 
   -- telescope
   use 'nvim-lua/plenary.nvim'

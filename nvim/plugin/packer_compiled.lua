@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["fizz.nvim"] = {
-    loaded = true,
-    path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/fizz.nvim",
-    url = "https://github.com/sebasruiz09/fizz.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -128,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  neovim = {
+    loaded = true,
+    path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["no-clown-fiesta.nvim"] = {
     loaded = true,
@@ -168,11 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vesper.nvim"] = {
-    loaded = true,
-    path = "/home/tim-price/.local/share/nvim/site/pack/packer/start/vesper.nvim",
-    url = "https://github.com/datsfilipe/vesper.nvim"
   },
   vimtex = {
     loaded = true,
