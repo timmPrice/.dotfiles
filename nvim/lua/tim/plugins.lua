@@ -47,5 +47,15 @@ return require('packer').startup(function(use)
 -- VimTex
 use 'lervag/vimtex'
 
+--mini nvim
+use {
+    "echasnovski/mini.nvim",
+    config = function()
+        require('mini.statusline').setup()
+    end
+}
+
 end)
+
+
 
