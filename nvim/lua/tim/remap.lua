@@ -29,11 +29,11 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
---vim.keymap.set("n", "<leader>s", function()
-  --local find = vim.fn.input("Find: ")
-  --local replace = vim.fn.input("Replace with: ")
-  --vim.cmd(string.format("%%s/%s/%s/g", vim.fn.escape(find, "/"), vim.fn.escape(replace, "/")))
---end)
+vim.keymap.set("n", "<leader>s", function()
+  local find = vim.fn.input("Find: ")
+  local replace = vim.fn.input("Replace with: ")
+  vim.cmd(string.format("%%s/%s/%s/g", vim.fn.escape(find, "/"), vim.fn.escape(replace, "/")))
+end)
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
