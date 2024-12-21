@@ -11,3 +11,11 @@ git config merge.tool nvimdiff
 
 # move something to path
 export PATH="$PATH:/home/tim/the-file/directory"
+
+# search for processes
+ps -e | grep ...
+
+# check thermals
+lm_sensors
+sudo sensors-detect
+sensor

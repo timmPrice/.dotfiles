@@ -19,6 +19,8 @@ programs = [
     "gcc",
     "cargo",
     "fish",
+    "clang",
+    "gimp",
 ]
 
 def install_programs(package_manager):
