@@ -24,11 +24,12 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        { "ricardoraposo/gruvbox-minor.nvim", config = function() vim.cmd.colorscheme "gruvbox-minor" end },
+        -- { "ricardoraposo/gruvbox-minor.nvim", config = function() vim.cmd.colorscheme "gruvbox-minor" end },
+        { "aktersnurra/no-clown-fiesta.nvim", config = function() vim.cmd.colorscheme "no-clown-fiesta" end },
         { import = "config.plugins" },
     },
     change_detection = {
         enabled = false, -- disable automatic reload on config change
-        notify = false, -- disable notifications when reloading is disabled
+        notify = false,  -- disable notifications when reloading is disabled
     },
 })

@@ -11,8 +11,6 @@ programs = [
     "nvim",
     "tmux",
     "kitty",
-    "zsh",
-    "gnome-tweaks",
     "git",
     "python3",
     "pip",
@@ -21,6 +19,8 @@ programs = [
     "fish",
     "clang",
     "gimp",
+    "lm_sensors",
+    "go"
 ]
 
 def install_programs(package_manager):

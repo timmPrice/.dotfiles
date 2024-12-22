@@ -16,8 +16,25 @@ return {
             },
         },
         config = function()
+            vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+
             local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+            local mason_lspconfig = require("mason-lspconfig")
+
+            mason_lspconfig.setup({
+                ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd", "ocamllsp", "sqls", "gopls" },
+                automatic_installation = true,
+            })
+
             require("lspconfig").lua_ls.setup { capabilities = capabilities }
+            require("lspconfig").pyright.setup { capabilities = capabilities }
+            require("lspconfig").omnisharp.setup { capabilities = capabilities }
+            require("lspconfig").clangd.setup { capabilities = capabilities }
+            require("lspconfig").ocamllsp.setup { capabilities = capabilities }
+            require("lspconfig").sqls.setup { capabilities = capabilities }
+            require("lspconfig").gopls.setup { capabilities = capabilities }
+
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
                     local client = vim.lsp.get_client_by_id(args.data.client_id)

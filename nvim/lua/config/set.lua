@@ -1,6 +1,6 @@
 local set = vim.opt
 
-set.nu = true 
+set.nu = true
 set.relativenumber = true
 
 set.shiftwidth = 4
