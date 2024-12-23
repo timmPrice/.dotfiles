@@ -31,7 +31,12 @@ return {
             require("lspconfig").pyright.setup { capabilities = capabilities }
             require("lspconfig").omnisharp.setup { capabilities = capabilities }
             require("lspconfig").clangd.setup { capabilities = capabilities }
-            require("lspconfig").ocamllsp.setup { capabilities = capabilities }
+            require("lspconfig").ocamllsp.setup {
+                capabilities = capabilities,
+                root_dir = function()
+                    return vim.fn.getcwd() -- This makes the current directory the root for LSP
+                end,
+            }
             require("lspconfig").sqls.setup { capabilities = capabilities }
             require("lspconfig").gopls.setup { capabilities = capabilities }
 
