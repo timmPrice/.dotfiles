@@ -19,3 +19,6 @@ ps -e | grep ...
 lm_sensors
 sudo sensors-detect
 sensor
+
+# check bios verison
+sudo dmidecode | less
