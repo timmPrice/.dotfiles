@@ -9,17 +9,23 @@ return {
     opts = {},
 
     config = function()
-        local Enabled = true
+        local Enabled = false
 
         local function toggle_markdown()
             require('render-markdown').setup({})
             if Enabled == false then
                 print("enabling markdown rendering")
                 require('render-markdown').enable()
+
+                -- enable text wrapping
+                vim.cmd("set wrap")
                 Enabled = true
             else
                 print("disabling markdown rendering")
                 require('render-markdown').disable()
+
+                -- enable text wrapping
+                vim.cmd("set nowrap")
                 Enabled = false
             end
         end

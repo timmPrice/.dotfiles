@@ -23,7 +23,7 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd", "ocamllsp", "sqls", "gopls" },
+                ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd", "ocamllsp", "sqls", "gopls", "bashls", "zls" },
                 automatic_installation = true,
             })
 
@@ -31,6 +31,13 @@ return {
             require("lspconfig").pyright.setup { capabilities = capabilities }
             require("lspconfig").omnisharp.setup { capabilities = capabilities }
             require("lspconfig").clangd.setup { capabilities = capabilities }
+            require("lspconfig").bashls.setup { capabilities = capabilities }
+            require("lspconfig").zls.setup {
+                capabilities = capabilities,
+                flags = {
+                    debounce_text_changes = 150,
+                },
+            }
             require("lspconfig").ocamllsp.setup {
                 capabilities = capabilities,
                 root_dir = function()
@@ -38,7 +45,9 @@ return {
                 end,
             }
             require("lspconfig").sqls.setup { capabilities = capabilities }
-            require("lspconfig").gopls.setup { capabilities = capabilities }
+            require("lspconfig").gopls.setup {
+                capabilities = capabilities,
+            }
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
@@ -54,6 +63,15 @@ return {
                             end
                         })
                     end
+                end,
+            })
+            -- Set tab width to 4 spaces for Go files
+            vim.api.nvim_create_autocmd('FileType', {
+                pattern = "go",
+                callback = function()
+                    vim.opt_local.shiftwidth = 4
+                    vim.opt_local.tabstop = 4
+                    vim.opt_local.expandtab = true
                 end,
             })
         end,
