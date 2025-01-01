@@ -24,8 +24,38 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        -- { "ricardoraposo/gruvbox-minor.nvim", config = function() vim.cmd.colorscheme "gruvbox-minor" end },
-        { "aktersnurra/no-clown-fiesta.nvim", config = function() vim.cmd.colorscheme "no-clown-fiesta" end },
+        {
+            "rose-pine/neovim",
+            config = function()
+                require("rose-pine").setup({
+                    variant = "main",
+                    dark_variant = "main",
+                    dim_inactive_windows = false,
+                    extend_background_behind_borders = true,
+                    enable = {
+                        terminal = true,
+                    },
+                    styles = {
+                        bold = true,
+                        italic = true,
+                        transparency = false,
+                    },
+                    palette = {
+                        main = {
+                            base = '#212121',
+                            --- overlay = '#464646',
+                            overlay = '#545454',
+                            surface = '#383838',
+
+                            subltle = '545454',
+                            muted = '#484848',
+                        },
+                    },
+
+                })
+                vim.cmd.colorscheme "rose-pine"
+            end
+        },
         { import = "config.plugins" },
     },
     change_detection = {
