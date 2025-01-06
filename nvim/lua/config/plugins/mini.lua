@@ -15,7 +15,7 @@ return {
                     silent = false,
                 },
             }
-            local comment = require 'mini.comment'
+            local comment = require 'mini.comment' -- gc = group comment in Visual mode
         end
     }
 }
