@@ -9,4 +9,5 @@ end
 #   - auto-completion for the opam binary
 # This section can be safely removed at any time if needed.
 test -r '/home/timprice/.opam/opam-init/init.fish' && source '/home/timprice/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
+source '/home/timprice/.local/bin'
 # END opam configuration

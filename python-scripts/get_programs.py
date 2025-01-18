@@ -20,7 +20,8 @@ programs = [
     "clang",
     "gimp",
     "lm_sensors",
-    "go"
+    "go",
+    "zig"
 ]
 
 def install_programs(package_manager):
