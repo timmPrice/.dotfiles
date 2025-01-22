@@ -24,8 +24,10 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        { "ellisonleao/gruvbox.nvim", config = function() vim.cmd.colorscheme "gruvbox" end },
+        { "doums/darcula",          config = function() vim.cmd.colorscheme "darcula" end },
         { import = "config.plugins" },
+        -- { "ellisonleao/gruvbox.nvim", config = function() vim.cmd.colorscheme "gruvbox" end },
+
     },
     change_detection = {
         enabled = false, -- disable automatic reload on config change
