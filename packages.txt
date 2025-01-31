@@ -16,3 +16,6 @@ gimp
 lm_sensors
 go
 kicad
+zig
+mysql
+mysql-server
