@@ -1,30 +1,33 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>cv", "<CMD>Oil<Cr>")
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-s>", "<C-d>zz")
-vim.keymap.set("n", "<C-d>", "<C-u>zz")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set("n", "<C-j>", "<C-d>zz")
+vim.keymap.set("n", "<C-k>", "<C-u>zz")
+
+-- deleted text doesn't get added to clipboard
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-
 -- window splits
-vim.keymap.set("n", "<C-v>", "<cmd>vsplit")
+vim.keymap.set("n", "<C-v>", "<cmd>vsplit<CR>")
+vim.keymap.set("n", "<C-h>", "<cmd>split<CR>")
+
+-- change windows
+vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>s", function()
     local find = vim.fn.input("Find: ")
