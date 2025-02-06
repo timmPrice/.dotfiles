@@ -23,10 +23,11 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd", "ocamllsp", "sqls", "gopls", "bashls", "zls" },
+                ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd", "ocamllsp", "gopls", "bashls", "zls" },
                 automatic_installation = true,
             })
 
+            require("lspconfig").fish_lsp.setup { capabilities = capabilities }
             require("lspconfig").lua_ls.setup { capabilities = capabilities }
             require("lspconfig").pyright.setup { capabilities = capabilities }
             require("lspconfig").omnisharp.setup { capabilities = capabilities }
@@ -44,7 +45,6 @@ return {
                     return vim.fn.getcwd() -- This makes the current directory the root for LSP
                 end,
             }
-            require("lspconfig").sqls.setup { capabilities = capabilities }
             require("lspconfig").gopls.setup {
                 capabilities = capabilities,
             }
