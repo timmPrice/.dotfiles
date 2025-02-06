@@ -33,6 +33,7 @@ return {
             require("lspconfig").omnisharp.setup { capabilities = capabilities }
             require("lspconfig").clangd.setup { capabilities = capabilities }
             require("lspconfig").bashls.setup { capabilities = capabilities }
+            require("lspconfig").texlab.setup { capabilities = capabilities }
             require("lspconfig").zls.setup {
                 capabilities = capabilities,
                 flags = {

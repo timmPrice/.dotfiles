@@ -24,7 +24,15 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        { "doums/darcula",          config = function() vim.cmd.colorscheme "darcula" end },
+        {
+            "craftzdog/solarized-osaka.nvim",
+            config = function()
+                require("solarized-osaka").setup {
+                    transparent = false,
+                }
+                vim.cmd.colorscheme "solarized-osaka"
+            end
+        },
         { import = "config.plugins" },
         -- { "ellisonleao/gruvbox.nvim", config = function() vim.cmd.colorscheme "gruvbox" end },
 
