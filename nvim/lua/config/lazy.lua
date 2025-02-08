@@ -25,16 +25,22 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         {
-            "craftzdog/solarized-osaka.nvim",
+            "rose-pine/neovim",
             config = function()
-                require("solarized-osaka").setup {
-                    transparent = false,
+                require("rose-pine").setup {
+                    styles = {
+                        bold = true,
+                        italic = true,
+                        transparency = true,
+                    },
                 }
-                vim.cmd.colorscheme "solarized-osaka"
+                vim.cmd.colorscheme "rose-pine"
             end
         },
         { import = "config.plugins" },
-        -- { "ellisonleao/gruvbox.nvim", config = function() vim.cmd.colorscheme "gruvbox" end },
+
+        -- "craftzdog/solarized-osaka.nvim",
+        -- "ellisonleao/gruvbox.nvim",
 
     },
     change_detection = {
