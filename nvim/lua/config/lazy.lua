@@ -25,16 +25,12 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         {
-            "rose-pine/neovim",
+            "Mofiqul/vscode.nvim",
             config = function()
-                require("rose-pine").setup {
-                    styles = {
-                        bold = true,
-                        italic = true,
-                        transparency = true,
-                    },
+                require("vscode").setup {
+                    transparent = true,
                 }
-                vim.cmd.colorscheme "rose-pine"
+                vim.cmd.colorscheme "vscode"
             end
         },
         { import = "config.plugins" },

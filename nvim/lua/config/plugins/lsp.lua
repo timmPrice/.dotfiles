@@ -23,11 +23,11 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd", "ocamllsp", "gopls", "bashls", "zls" },
+                ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd", "ocamllsp", "gopls", "bashls", "zls", "ts_ls", },
                 automatic_installation = true,
             })
 
-            require("lspconfig").fish_lsp.setup { capabilities = capabilities }
+            require("lspconfig").ts_ls.setup { capabilities = capabilities }
             require("lspconfig").lua_ls.setup { capabilities = capabilities }
             require("lspconfig").pyright.setup { capabilities = capabilities }
             require("lspconfig").omnisharp.setup { capabilities = capabilities }
