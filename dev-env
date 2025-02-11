@@ -42,4 +42,14 @@ copy_dir(){
     popd > /dev/null
 }
 
+copy_file(){
+    from=$1
+    to=$2
+    name=$(basename $from)
+
+    execute rm $to/$name
+    execute cp -r $from $to/$name
+}
+
 copy_dir ./env/.config $HOME/.config 
+copy_file ./env/.ready-tmux $HOME
