@@ -19,3 +19,4 @@ kicad
 zig
 mysql
 mysql-server
+i3
