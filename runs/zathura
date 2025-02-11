@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+$dirname="$HOME/.source"
+
+if which zathura &>/dev/null; then 
+    echo "Zathura is already installed"
+    exit 0
+fi
+
+sudo dnf install libmagic json-glib girara glib gtk3 sqlite3 meson gettext pkgconf ninja
+
+git clone https://github.com/pwmt/zathura.git $dirname/ 
+
+cd "$dirname/zathura/"
+meson setup build
+cd "build"
+ninja
+sudo ninja install
+
+# sudo dnf install zathura zathura-pdf-poppler
