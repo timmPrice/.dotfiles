@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+if [[ -x ".ready-tmux" ]]; then
+    ./.ready-tmux
+elif [[ -x "$HOME/.ready-tmux" ]]; then
+    $HOME/.ready-tmux
+else
+    echo "No ready-tmux script found!"
+    exit 1
+fi
+
+clear

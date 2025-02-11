@@ -1,0 +1,5 @@
+#!/usr/bin/bash 
+
+tmux neww -n term
+tmux neww -n nvim 
+tmux neww -n misc 
