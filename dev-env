@@ -53,3 +53,4 @@ copy_file(){
 
 copy_dir ./env/.config $HOME/.config 
 copy_file ./env/.ready-tmux $HOME
+copy_file ./env/.config/.tmux.conf $HOME
