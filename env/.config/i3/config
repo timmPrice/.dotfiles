@@ -200,6 +200,6 @@ client.focused_inactive #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
 
 # Screenshots (saved to ~/Pictures with timestamp)
-bindsym $mod+P exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
-bindsym Shift+$mod+P exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-window.png"
-bindsym Ctrl+$mod+P exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
+bindsym $mod+P exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
+bindsym Shift+$mod+P exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-window.png"
+bindsym Ctrl+$mod+P exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
