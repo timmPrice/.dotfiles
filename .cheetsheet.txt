@@ -22,3 +22,7 @@ sensor
 
 # check bios verison
 sudo dmidecode | less
+
+# unblock wifi - wifi disabled i3
+rfkill list
+rfkill unblock wifi
