@@ -1,0 +1,11 @@
+[Unit]
+Description=Kanata Key Remap Software
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/usr/local/bin/kanata -c /home/tim-price/.config/kanata/hhkb.kbd
+Nice=-20
+
+[Install]
+WantedBy=defualt.target

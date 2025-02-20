@@ -1,0 +1,27 @@
+(defsrc
+  esc 1 2 3 4 5 6 7 8 9 0 - = `
+  tab q w e r t y u i o p [ ] bspc
+  lctl a s d f g h j k l ; ' ret
+  lsft z x c v b n m , . / rsft 
+  lalt muhenkan spc henkan ralt
+)
+
+(defalias
+  ll (layer-toggle left))
+
+(deflayer default
+  esc 1 2 3 4 5 6 7 8 9 0 - = `
+  tab q w e r t y u i o p [ ] bspc
+  lctl a s d f g h j k l ; ' ret
+  lsft z x c v b n m , . / rsft 
+  lalt @ll spc henkan ralt
+)
+
+(deflayer left
+  esc 1 2 3 4 5 6 7 8 9 0 - = `
+  tab prev pp next r t y u i o p [ ] del
+  lctl a s home end g left down up rght ; ' ret
+  lsft z x c v b n m , . / rsft 
+  lalt @ll spc lmet ralt
+)
+
