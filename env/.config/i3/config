@@ -1,4 +1,5 @@
 exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 239.76 --primary
+exec --no-startup-id xset s off -dpms
 
 set $mod Mod1
 
@@ -200,4 +201,3 @@ exec --no-startup-id xset s off -dpms
 
 # unblock wifi
 bindsym $mod+shift+W exec --no-startup-id rfkill unblock wifi
-
