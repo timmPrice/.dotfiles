@@ -25,19 +25,15 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         {
-            "Mofiqul/vscode.nvim",
+            "oxfist/night-owl.nvim",
             config = function()
-                require("vscode").setup {
-                    transparent = true,
+                require("night-owl").setup {
+                    transparent_background = true,
                 }
-                vim.cmd.colorscheme "vscode"
+                vim.cmd.colorscheme "night-owl"
             end
         },
         { import = "config.plugins" },
-
-        -- "craftzdog/solarized-osaka.nvim",
-        -- "ellisonleao/gruvbox.nvim",
-
     },
     change_detection = {
         enabled = false, -- disable automatic reload on config change

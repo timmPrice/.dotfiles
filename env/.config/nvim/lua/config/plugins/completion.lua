@@ -23,7 +23,9 @@ return {
 
             sources = {
                 default = { 'lsp', 'path', 'snippets', 'buffer' },
-                cmdline = {},
+            },
+            cmdline = {
+                sources = {},
             },
             signature = { enabled = true },
         },

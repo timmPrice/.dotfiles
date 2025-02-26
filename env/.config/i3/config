@@ -1,4 +1,5 @@
 exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 239.76 --primary
+
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -196,3 +197,7 @@ bindsym Ctrl+$mod+P exec --no-startup-id maim --format=png --select "/home/$USER
 
 # stop sleep mode
 exec --no-startup-id xset s off -dpms
+
+# unblock wifi
+bindsym $mod+shift+W exec --no-startup-id rfkill unblock wifi
+
