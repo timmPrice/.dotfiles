@@ -81,12 +81,6 @@ return {
                     vim.opt_local.expandtab = true
                 end,
             })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                pattern = "*.cpp,*.c,*.h",
-                callback = function()
-                    vim.lsp.buf.format({ async = false })
-                end
-            })
         end,
     },
 }
