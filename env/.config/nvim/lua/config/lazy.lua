@@ -25,12 +25,12 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         {
-            "oxfist/night-owl.nvim",
+            "folke/tokyonight.nvim",
             config = function()
-                require("night-owl").setup {
-                    transparent_background = true,
+                require("tokyonight").setup {
+                    transparent = true,
                 }
-                vim.cmd.colorscheme "night-owl"
+                vim.cmd.colorscheme "tokyonight"
             end
         },
         { import = "config.plugins" },

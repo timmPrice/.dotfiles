@@ -31,7 +31,13 @@ return {
             require("lspconfig").lua_ls.setup { capabilities = capabilities }
             require("lspconfig").pyre.setup { capabilities = capabilities }
             require("lspconfig").omnisharp.setup { capabilities = capabilities }
-            require("lspconfig").clangd.setup { capabilities = capabilities }
+            require("lspconfig").clangd.setup {
+                capabilties = capabilities,
+                cmd = { "clangd", "--fallback-style=none" }, -- Prevents overriding .clang-format
+                on_attach = function(client, bufnr)
+                    client.server_capabilities.documentFormattingProvider = false
+                end
+            }
             require("lspconfig").bashls.setup { capabilities = capabilities }
             require("lspconfig").texlab.setup { capabilities = capabilities }
             require("lspconfig").zls.setup {
@@ -74,6 +80,12 @@ return {
                     vim.opt_local.tabstop = 4
                     vim.opt_local.expandtab = true
                 end,
+            })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                pattern = "*.cpp,*.c,*.h",
+                callback = function()
+                    vim.lsp.buf.format({ async = false })
+                end
             })
         end,
     },
