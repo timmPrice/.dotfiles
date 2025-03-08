@@ -21,3 +21,4 @@ mysql
 mysql-server
 i3
 pipx
+xset
