@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+# fixes time settings messing with windows in dual-boot env
+timedatectl set-local-rtc 1 --adjust-system-clock
