@@ -27,7 +27,7 @@ require("lazy").setup({
         {
             "aditya-azad/candle-grey",
             config = function()
-                vim.cmd.colorscheme "candle-grey"
+                vim.cmd.colorscheme "candle-grey-transparent"
             end
         },
         { import = "config.plugins" },
