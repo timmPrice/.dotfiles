@@ -10,7 +10,7 @@ return {
             require("telescope").setup {
                 pickers = {
                     find_files = {
-                        theme = "ivy",
+                        theme = "dropdown",
                         -- hidden = "true",
                     }
                 }
@@ -20,12 +20,14 @@ return {
             vim.keymap.set("n", "<space>df", require('telescope.builtin').find_files)
             vim.keymap.set("n", "<space>en", function()
                 require('telescope.builtin').find_files {
-                    cwd = vim.fn.stdpath("config")
+                    cwd = "~/repos/.dotfiles/env/.config/nvim/"
                 }
             end)
             vim.keymap.set("n", "<space>nn", function()
                 require('telescope.builtin').find_files {
-                    cwd = vim.fn.expand("~/repos/Zettelkasten/")
+                    cwd = "~/repos/notes",
+                    prompt_title = "notes",
+                    hidden = "true",
                 }
             end)
         end
