@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+# ewwwww
+
+sudo dnf install java-21-openjdk-devel
