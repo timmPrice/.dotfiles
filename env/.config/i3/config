@@ -205,4 +205,4 @@ exec --no-startup-id xset s off -dpms
 
 # unblock wifi
 bindsym $mod+shift+W exec --no-startup-id rfkill unblock wifi
-exec pactl set-sink-volume @DEFAULT_SINK@ 120%
+exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ 118%   

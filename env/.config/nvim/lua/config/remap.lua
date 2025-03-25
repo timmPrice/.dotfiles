@@ -11,6 +11,9 @@ vim.keymap.set("n", "<C-k>", "<C-u>zz")
 vim.keymap.set("v", "<C-j>", "<C-d>zz")
 vim.keymap.set("v", "<C-k>", "<C-u>zz")
 
+vim.keymap.set("v", "<C-j>", "<C-d>zz")
+vim.keymap.set("v", "<C-k>", "<C-u>zz")
+
 -- deleted text doesn't get added to clipboard
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("x", "<leader>p", [["_dP]])
