@@ -17,7 +17,7 @@ return {
             }
 
             vim.keymap.set("n", "<space>hp", require('telescope.builtin').help_tags)
-            vim.keymap.set("n", "<space>df", require('telescope.builtin').find_files)
+            vim.keymap.set("n", "<space>p", require('telescope.builtin').find_files)
             vim.keymap.set("n", "<space>en", function()
                 require('telescope.builtin').find_files {
                     cwd = "~/repos/.dotfiles/env/.config/nvim/"
@@ -27,7 +27,6 @@ return {
                 require('telescope.builtin').find_files {
                     cwd = "~/repos/notes",
                     prompt_title = "notes",
-                    hidden = "true",
                 }
             end)
         end

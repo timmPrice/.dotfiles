@@ -24,12 +24,6 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        {
-            "aditya-azad/candle-grey",
-            config = function()
-                vim.cmd.colorscheme "candle-grey-transparent"
-            end
-        },
         { import = "config.plugins" },
     },
     change_detection = {

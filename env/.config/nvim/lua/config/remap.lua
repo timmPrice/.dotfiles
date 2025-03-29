@@ -28,7 +28,7 @@ vim.keymap.set("n", "<C-v>", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<C-h>", "<cmd>split<CR>")
 
 -- flip between files
-vim.keymap.set("n", "<leader>p", "<C-^>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-p>", "<C-^>", { noremap = true, silent = true })
 
 vim.cmd("unmap <leader>hp")
 -- change windows
