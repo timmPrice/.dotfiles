@@ -17,7 +17,17 @@ return {
             }
 
             vim.keymap.set("n", "<space>hp", require('telescope.builtin').help_tags)
-            vim.keymap.set("n", "<space>p", require('telescope.builtin').find_files)
+            vim.keymap.set("n", "<space>p", function()
+                require('telescope.builtin').find_files {
+                    promp_title = "nav",
+                    hidden = true,
+                }
+            end)
+            vim.keymap.set("n", "<space>f", function()
+                require('telescope.builtin').live_grep {
+                    promp_title = "grep",
+                }
+            end)
             vim.keymap.set("n", "<space>en", function()
                 require('telescope.builtin').find_files {
                     cwd = "~/repos/.dotfiles/env/.config/nvim/"

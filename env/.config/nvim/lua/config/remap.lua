@@ -21,7 +21,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+-- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- window splits
 vim.keymap.set("n", "<C-v>", "<cmd>vsplit<CR>")
@@ -30,7 +30,7 @@ vim.keymap.set("n", "<C-h>", "<cmd>split<CR>")
 -- flip between files
 vim.keymap.set("n", "<C-p>", "<C-^>", { noremap = true, silent = true })
 
-vim.cmd("unmap <leader>hp")
+-- vim.cmd("unmap <leader>hp")
 -- change windows
 vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true })
