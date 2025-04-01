@@ -17,7 +17,7 @@ return {
             }
 
             vim.keymap.set("n", "<space>hp", require('telescope.builtin').help_tags)
-            vim.keymap.set("n", "<space>p", function()
+            vim.keymap.set("n", "<C-p>", function()
                 require('telescope.builtin').find_files {
                     promp_title = "nav",
                     hidden = true,
