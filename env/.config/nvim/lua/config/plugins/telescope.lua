@@ -23,7 +23,7 @@ return {
                     hidden = true,
                 }
             end)
-            vim.keymap.set("n", "<space>f", function()
+            vim.keymap.set("n", "<C-f>", function()
                 require('telescope.builtin').live_grep {
                     promp_title = "grep",
                 }

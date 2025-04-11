@@ -30,7 +30,7 @@ vim.keymap.set("n", "<C-h>", "<cmd>split<CR>")
 -- flip between files
 vim.keymap.set("n", "<C-o>", "<C-^>", { noremap = true, silent = true })
 
--- vim.cmd("unmap <leader>hp")
+vim.cmd("unmap <leader>hp")
 -- change windows
 vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true })
@@ -38,7 +38,7 @@ vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, silent = true })
 
 -- tmux sessionizer
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- find and replace
 vim.keymap.set("n", "<leader>s", function()
