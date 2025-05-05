@@ -8,15 +8,10 @@ return {
     --     }) 
     --     vim.cmd.colorscheme "gruvbox"
     -- end
-    
-    "ramojus/mellifluous.nvim",
-    config = function()
-        require("mellifluous").setup({
-            styles = {
-                main_keywords = {bold = true} 
-            },
-        })
-        vim.opt.background = "light"
-        vim.cmd.colorscheme "mellifluous"
-    end,
+      "forest-nvim/sequoia.nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        vim.cmd("colorscheme sequoia") -- or 'sequoia-night' / 'sequoia-rise'
+      end,
 }
