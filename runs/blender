@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+wget https://www.blender.org/download/release/Blender4.4/blender-4.4.1-linux-x64.tar.xz/
+sudo ln -s /home/tim-price/blender/blender /usr/local/bin/blender
