@@ -8,6 +8,6 @@ test -r '/home/tim-price/.opam/opam-init/init.fish' && source '/home/tim-price/.
 set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
 
 set -U fish_user_paths ~/.local/bin $fish_user_paths
-set -Ux PYTHONUSERBASE $HOME/.local
+set -Ux PYTHONUSERBASE $HOME/.local 
 set -Ux PATH /usr/bin $PATH
 set -Ux PATH $HOME/.bun/bin $PATH
