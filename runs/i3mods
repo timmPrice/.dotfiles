@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+# rofi app switcher
+sudo dnf install rofi
+
+# polybar nav bar replacement
+sudo dnf install polybar
