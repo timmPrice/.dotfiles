@@ -6,18 +6,8 @@ sudo dnf install erlang
 
 cd ~/repos
 
-# download the latest release of elixir from github
-URL=$(curl -s https://api.github.com/repos/elixir-lang/elixir/releases/latest \
-  | jq -r '.assets[] | select(.name | test("\\.tar\\.gz$")) | .browser_download_url')
-
-curl -LO "$URL" 
-
-FILENAME=$(basename "$URL")
-tar -xvzf "$FILENAME"
-rm "$FILENAME"
-
-EXTRACTED_DIR=$(tar -tzf "$FILENAME" | head -n1 | cut -d/ -f1)
-cd "$EXTRACTED_DIR"
+git clone --branch v1.18 --single-branch git@github.com:elixir-lang/elixir.git 
+cd ~/repos/elixir
 make clean compile
 
 mkdir ~/.local/bin/elixir
