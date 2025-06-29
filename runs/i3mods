@@ -6,5 +6,7 @@ sudo dnf install rofi
 # polybar nav bar replacement
 sudo dnf install polybar
 
+# picom 
+sudo dnf install picom
 
 ### say Im in here coding...
