@@ -1,4 +1,3 @@
 #!/usr/bin/bash
 
 sudo dnf install java-21-openjdk-devel
-curl -s "https://get.sdkman.io" | bash
