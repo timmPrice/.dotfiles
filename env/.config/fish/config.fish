@@ -16,3 +16,7 @@ set -U fish_user_paths ~/.local/bin $fish_user_paths
 set -Ux PYTHONUSERBASE $HOME/.local 
 set -Ux PATH /usr/bin $PATH
 set -Ux PATH $HOME/.bun/bin $PATH
+
+function sdk
+    bass source "$HOME/.sdkman/bin/sdkman-init.sh" ';' sdk $argv
+end
