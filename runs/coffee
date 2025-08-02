@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
-cd ~/repos/.dotfiles
+if [ ! -d "$HOME/repos/coffee-animation" ]; then
+    cd "$HOME/repos" || exit 1
+    git clone git@github.com:timmPrice/terminal-coffee.git
+    mv terminal-coffee coffee-animation
+fi
+
+cd "$HOME/repos/.dotfiles"
 rm ./env/.local/scripts/coffee
-cp -r ~/repos/coffee-animation/bin/coffee ./env/.local/scripts/ 
+cp -r "$HOME/repos/coffee-animation/bin/coffee" ./env/.local/scripts/ 
