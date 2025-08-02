@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+cd ~/repos/.dotfiles
+rm ./env/.local/scripts/coffee
+cp -r ~/repos/coffee-animation/bin/coffee ./env/.local/scripts/ 
