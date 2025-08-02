@@ -4,6 +4,8 @@ set.nu = true
 set.relativenumber = true
 
 set.shiftwidth = 4
+set.tabstop = 4
+vim.o.expandtab = false
 set.expandtab = true
 set.smartindent = true
 set.wrap = false

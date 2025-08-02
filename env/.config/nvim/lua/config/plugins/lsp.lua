@@ -28,6 +28,7 @@ return {
                     "pyright",
                     "bashls",
                     "ocamllsp",
+                    "gopls",
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -64,7 +65,22 @@ return {
                 end,
             })
 
-            -- Format on save if supported
+            lspconfig.gopls.setup({
+                capabilities = capabilities,
+                settings = {
+                    gopls = {
+                        analyses = {
+                            simplify = false,
+                            unusedparams = true,
+                            shadow = true,
+                            modernize = false,
+                        },
+                        staticcheck = true,
+                        gofumpt = true,
+                    },
+                },
+            })
+
             vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(args)
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -81,6 +97,13 @@ return {
                         })
                     end
                 end,
+            })
+            vim.diagnostic.config({
+                virtual_text = true,
+                signs = true,
+                underline = true,
+                update_in_insert = false,
+                severity_sort = true,
             })
         end,
     },
