@@ -42,11 +42,25 @@ return {
                 "omnisharp",
                 "pyright",
                 "bashls",
+                "gopls"
             }) do
                 lspconfig[server].setup({
                     capabilities = capabilities,
                 })
             end
+
+            local pid = vim.fn.getpid()
+            local omnisharp_bin = vim.fn.stdpath("data") .. "/mason/bin/omnisharp"
+
+            lspconfig.omnisharp.setup({
+                capabilities = capabilities,
+                cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+                enable_editorconfig_support = true,
+                enable_roslyn_analyzers = true,
+                enable_import_completion = true,
+                organize_imports_on_format = true,
+                enable_decompilation_support = true,
+            })
 
             -- Setup clangd with custom options
             lspconfig.clangd.setup({
