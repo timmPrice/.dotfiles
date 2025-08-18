@@ -20,3 +20,6 @@ set.swapfile = false
 
 set.termguicolors = true
 set.clipboard = "unnamedplus"
+
+vim.cmd(":hi statusline guibg=NONE")
+set.signcolumn = "no"

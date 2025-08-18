@@ -1,27 +1,4 @@
 return {
-    -- "timmPrice/sitruuna.vim",
-    -- "aditya-azad/candle-grey",
-    -- config = function()
-    --     vim.cmd.colorscheme "candle-grey" 
-    -- end
-    -- "ellisonleao/gruvbox.nvim",
-    -- config = function()
-    --     require("gruvbox").setup({
-    --         transparent_mode = true, 
-    --     }) 
-    --     vim.cmd.colorscheme "gruvbox"
-    -- end
-    -- "rose-pine/neovim",
-    -- name = "rose-pine",
-    -- config = function()
-    --     require("rose-pine").setup({
-    --         variant = "moon",
-    --         styles = {
-    --             transparency = true,
-    --         },
-    --     })
-    --     vim.cmd("colorscheme rose-pine")
-    -- end
     "vague2k/vague.nvim",
     config = function()
         require("vague").setup({
@@ -54,5 +31,6 @@ return {
             },
         })
         vim.cmd("colorscheme vague")
-    end
+    end,
+
 }
