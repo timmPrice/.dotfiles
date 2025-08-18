@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+sudo systemctl unmask suspend.target
+sudo systemctl unmask sleep.target
+sudo systemctl unmask suspend.service
+sudo systemctl unmask sleep.service
