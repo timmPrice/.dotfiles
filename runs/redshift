@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+sudo dnf install crontab redshift
+
+if [ ! -d "$HOME/.config/systemd/user/"]; then
+    mkdir -p "$HOME/.config/systemd/user/"
+fi
+
+if [ -d "../redshift" ]; then
+    crontab "../redshift.cron"
+    cp "../redshift/redshift.service" "$HOME/.config/systemd/user/"
+fi
+
+cp "../redshift/redshift.service" "$HOME/.config/systemd/user/"
+systemctl --user enable --now redshift

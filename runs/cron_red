@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-
-sudo dnf install crontab redshift
-
-if [ -f "../redshift.cron" ]; then
-    crontab "../redshift.cron"
-fi

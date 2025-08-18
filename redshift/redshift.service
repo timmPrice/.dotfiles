@@ -1,0 +1,12 @@
+[Unit]
+Description=Redshift (blue light filter / red hue) activation in evening hours for night reading
+
+[Service]
+ExecStart=/usr/bin/redshift
+ExecReload=systemctl restart redshift
+Type=simple
+Restart=on-failure
+
+[Install]
+WantedBy=graphical.target
+
