@@ -5,7 +5,6 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf &
 exec_always --no-startup-id pkill polybar
 exec_always --no-startup-id sh -c "sleep 0.25 && polybar mybar &"
 
-
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
