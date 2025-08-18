@@ -1,8 +1,3 @@
 function wifi
-    nm-connection-editor
+    nmtui 
 end
-
-function bluetooth
-    blueman-manager
-end
-
