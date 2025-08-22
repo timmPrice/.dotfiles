@@ -27,7 +27,6 @@ return {
                     "clangd",
                     "pyright",
                     "bashls",
-                    "ocamllsp",
                     "gopls",
                 },
                 automatic_installation = true,
@@ -60,6 +59,20 @@ return {
                 enable_import_completion = true,
                 organize_imports_on_format = true,
                 enable_decompilation_support = true,
+            })
+
+            lspconfig.svlangserver.setup({
+                capabilities = capabilities,
+                filetypes = { "verilog", "systemverilog" },            -- recognize both
+                root_dir = lspconfig.util.root_pattern(".git", "hdl"), -- pick your project root
+                settings = {
+                    systemverilog = {
+                        includeIndexing = { "**/*.sv", "**/*.svh", "**/*.v" },
+                        excludeIndexing = { "test/**/*.sv" },
+                        defines = { "SYNTHESIS", "SIMULATION" },  -- optional
+                        formatCommand = "verible-verilog-format", -- if you want formatting
+                    }
+                }
             })
 
             -- Setup clangd with custom options

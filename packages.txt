@@ -24,3 +24,9 @@ pipx
 xset
 lldb
 redshift
+autoconf
+gperf
+make
+g++
+bison
+flex
