@@ -57,7 +57,10 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
--- new save command
 vim.api.nvim_create_user_command("W", "w", {})
 
 vim.keymap.set("n", "B", "F<Space>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>tt", function()
+    vim.cmd("TypstPreview")
+end, { noremap = true, silent = true })
