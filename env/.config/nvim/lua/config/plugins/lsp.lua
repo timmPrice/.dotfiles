@@ -28,6 +28,7 @@ return {
                     "pyright",
                     "bashls",
                     "gopls",
+                    "ts_ls",
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -41,12 +42,32 @@ return {
                 "omnisharp",
                 "pyright",
                 "bashls",
-                "gopls"
+                "gopls",
+                "ts_ls",
             }) do
                 lspconfig[server].setup({
                     capabilities = capabilities,
                 })
             end
+
+            lspconfig.ts_ls.setup({
+                capabilities = capabilities,
+                filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+                root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
+                settings = {
+                    typescript = {
+                        inlayHints = {
+                            includeInlayParameterNameHints = "all", -- show param names
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayEnumMemberValueHints = true,
+                        },
+                    },
+                },
+            })
 
             local pid = vim.fn.getpid()
             local omnisharp_bin = vim.fn.stdpath("data") .. "/mason/bin/omnisharp"
