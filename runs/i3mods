@@ -8,5 +8,3 @@ sudo dnf install polybar
 
 # picom 
 sudo dnf install picom
-
-### say Im in here coding...

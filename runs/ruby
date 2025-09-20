@@ -1,1 +1,0 @@
-sudo dnf install sqlite-devel redis ruby-devel rbenv

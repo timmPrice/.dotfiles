@@ -29,6 +29,8 @@ return {
                     "bashls",
                     "gopls",
                     "ts_ls",
+                    "tinymist",
+                    "rust_analyzer"
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -44,6 +46,8 @@ return {
                 "bashls",
                 "gopls",
                 "ts_ls",
+                "tinymist",
+                "rust_analyzer",
             }) do
                 lspconfig[server].setup({
                     capabilities = capabilities,
@@ -96,20 +100,41 @@ return {
                 }
             })
 
-            -- Setup clangd with custom options
+            lspconfig.rust_analyzer.setup({
+                capabilities = capabilities,
+                filetypes = { "rust" },
+                root_dir = lspconfig.util.root_pattern("Cargo.toml", "rust-project.json", ".git"),
+                settings = {
+                    ["rust-analyzer"] = {
+                        cargo = {
+                            allFeatures = true,
+                        },
+                        inlayHints = {
+                            bindingModeHints = { enable = true },
+                            chainingHints = { enable = true },
+                            closingBraceHints = { enable = true },
+                            closureReturnTypeHints = { enable = "always" },
+                            lifetimeElisionHints = { enable = "always", useParameterNames = true },
+                            parameterHints = { enable = true },
+                            reborrowHints = { enable = "always" },
+                            typeHints = { enable = true },
+                        },
+                    },
+                },
+            })
+
+            lspconfig.tinymist.setup({
+                capabilities = capabilities,
+                cmd = { "tinymist", },
+                filetypes = { "typst" },
+                root_dir = lspconfig.util.root_pattern("typst.toml", ".git") or vim.fn.getcwd(),
+            })
+
             lspconfig.clangd.setup({
                 capabilities = capabilities,
                 cmd = { "clangd", "--fallback-style=none" },
                 on_attach = function(client)
                     client.server_capabilities.documentFormattingProvider = false
-                end,
-            })
-
-            -- Setup ocamllsp with root_dir override
-            lspconfig.ocamllsp.setup({
-                capabilities = capabilities,
-                root_dir = function()
-                    return vim.fn.getcwd()
                 end,
             })
 

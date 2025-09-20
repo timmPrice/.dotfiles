@@ -11,7 +11,6 @@ set.smartindent = true
 set.wrap = false
 
 set.scrolloff = 8
-set.colorcolumn = "80"
 set.signcolumn = "yes"
 
 set.hlsearch = false
@@ -23,3 +22,4 @@ set.clipboard = "unnamedplus"
 
 vim.cmd(":hi statusline guibg=NONE")
 set.signcolumn = "no"
+vim.o.winborder = "rounded"
