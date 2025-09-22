@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+# based on the rust timer cli I built
+categories=("MATH" "PROGRAMING" "READING" "LATIN" "WATCHING" "HOMEWORK" "CHESS" "WASTING" "END") 
+category=$(printf "%s\n" "${categories[@]}" | fzf)
+
+if [[ "$category" == "END" ]]; then
+    rtimer end 
+    tmux set -g status-right ""
+    exit 0
+fi
+
+rtimer start --category "$category"
+
+tmux set -g status-right "$category"
