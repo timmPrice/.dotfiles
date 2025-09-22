@@ -1,3 +1,4 @@
 #!/usr/bin/bash
 
 sudo dnf install -y $(cat packages.txt)
+cargo install --git https://github.com/MordechaiHadad/bob.git
