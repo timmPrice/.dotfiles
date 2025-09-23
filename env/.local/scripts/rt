@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 # based on the rust timer cli I built
-categories=("MATH" "PROGRAMING" "READING" "LATIN" "WATCHING" "HOMEWORK" "CHESS" "WASTING" "END") 
+categories=("MATH" "PROGRAMMING" "READING" "LATIN" "WATCHING" "HOMEWORK" "CHESS" "WASTING" "END") 
 category=$(printf "%s\n" "${categories[@]}" | fzf)
 
 if [[ "$category" == "END" ]]; then
