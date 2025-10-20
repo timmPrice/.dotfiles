@@ -196,5 +196,4 @@ exec --no-startup-id sh -c "sleep 3 && pactl set-sink-volume @DEFAULT_SINK@ 118%
 for_window [class=".*"] border none
 
 # lockscreen bind
-
-bindsym $mod+Ctrl+l exec i3lock -c 000000
+bindsym $mod+Ctrl+l exec systemctl sleep 
