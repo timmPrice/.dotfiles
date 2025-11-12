@@ -30,9 +30,16 @@ return {
                     "gopls",
                     "ts_ls",
                     "tinymist",
+<<<<<<< HEAD
                     "rust_analyzer",
                     "arduino_language_server",
                     "texlab"
+||||||| 6e8f513
+                    "rust_analyzer"
+=======
+                    "rust_analyzer",
+                    "verible",
+>>>>>>> a76b7aa818c691c9a32c0b66cd1efa3e7ed132c7
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -118,18 +125,12 @@ return {
                 enable_decompilation_support = true,
             })
 
-            lspconfig.svlangserver.setup({
+            lspconfig.verible.setup({
                 capabilities = capabilities,
-                filetypes = { "verilog", "systemverilog" },            -- recognize both
-                root_dir = lspconfig.util.root_pattern(".git", "hdl"), -- pick your project root
-                settings = {
-                    systemverilog = {
-                        includeIndexing = { "**/*.sv", "**/*.svh", "**/*.v" },
-                        excludeIndexing = { "test/**/*.sv" },
-                        defines = { "SYNTHESIS", "SIMULATION" },  -- optional
-                        formatCommand = "verible-verilog-format", -- if you want formatting
-                    }
-                }
+                filetypes = { "verilog", "systemverilog" },
+                cmd = {
+                    'verible-verilog-ls', '--rules_config_search'
+                },
             })
 
             lspconfig.rust_analyzer.setup({

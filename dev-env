@@ -56,3 +56,5 @@ copy_dir ./env/.local/ $HOME/.local
 
 copy_file ./env/.ready-tmux $HOME
 copy_file ./env/.config/.tmux.conf $HOME
+copy_file ./env/.rules.verible_lint $HOME
+# put a clang_config here!

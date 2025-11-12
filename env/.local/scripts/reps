@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+cd "$HOME/repos/$(ls -a $HOME/repos/ | fzf)" || exit
+exec $SHELL
+
+
