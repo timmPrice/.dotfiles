@@ -198,3 +198,7 @@ for_window [class=".*"] border none
 # lockscreen bind
 
 bindsym $mod+Ctrl+l exec i3lock -c 000000
+
+for_window [class="cs2"] fullscreen enable
+for_window [class="cs2"] floating enable
+for_window [class="cs2"] move to workspace 10: Game

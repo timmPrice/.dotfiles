@@ -30,16 +30,11 @@ return {
                     "gopls",
                     "ts_ls",
                     "tinymist",
-<<<<<<< HEAD
                     "rust_analyzer",
                     "arduino_language_server",
-                    "texlab"
-||||||| 6e8f513
-                    "rust_analyzer"
-=======
+                    "texlab",
                     "rust_analyzer",
                     "verible",
->>>>>>> a76b7aa818c691c9a32c0b66cd1efa3e7ed132c7
                 },
                 automatic_installation = true,
                 automatic_enable = false,
