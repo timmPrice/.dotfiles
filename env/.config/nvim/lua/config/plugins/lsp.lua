@@ -35,6 +35,7 @@ return {
                     "texlab",
                     "rust_analyzer",
                     "verible",
+                    "elixirls"
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -54,11 +55,31 @@ return {
                 "rust_analyzer",
                 "arduino_language_server",
                 "texlab",
+                "elixirls"
             }) do
                 lspconfig[server].setup({
                     capabilities = capabilities,
                 })
             end
+
+            lspconfig.elixirls.setup({
+                cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
+                capabilities = capabilities,
+                filetypes = { "elixir", "eelixir", "heex", "surface" },
+                settings = {
+                    elixirLS = {
+                        dialyzerEnabled = true,
+                        dialyzerFormat = "dialyzer",
+                        fetchDeps = true,
+                        enableTestLenses = true,
+                        autoBuild = true,
+                        mixEnv = "dev",
+                        enableHexDocs = true,
+                        suggestSpecs = true,
+                        logLevel = "warn",
+                    },
+                },
+            })
 
             lspconfig.texlab.setup({
                 capabilities = capabilities,
