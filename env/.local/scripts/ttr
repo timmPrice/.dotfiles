@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+#fzf a list of options to track.
+#start a timer
+#stop a timer
+#store time in a file somewhere
+

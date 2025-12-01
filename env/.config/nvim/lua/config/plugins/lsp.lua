@@ -31,7 +31,11 @@ return {
                     "ts_ls",
                     "tinymist",
                     "rust_analyzer",
+                    "arduino_language_server",
+                    "texlab",
+                    "rust_analyzer",
                     "verible",
+                    "elixirls"
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -49,11 +53,61 @@ return {
                 "ts_ls",
                 "tinymist",
                 "rust_analyzer",
+                "arduino_language_server",
+                "texlab",
+                "elixirls"
             }) do
                 lspconfig[server].setup({
                     capabilities = capabilities,
                 })
             end
+
+            lspconfig.elixirls.setup({
+                cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
+                capabilities = capabilities,
+                filetypes = { "elixir", "eelixir", "heex", "surface" },
+                settings = {
+                    elixirLS = {
+                        dialyzerEnabled = true,
+                        dialyzerFormat = "dialyzer",
+                        fetchDeps = true,
+                        enableTestLenses = true,
+                        autoBuild = true,
+                        mixEnv = "dev",
+                        enableHexDocs = true,
+                        suggestSpecs = true,
+                        logLevel = "warn",
+                    },
+                },
+            })
+
+            lspconfig.texlab.setup({
+                capabilities = capabilities,
+                filetypes = { "tex", "plaintex", "bib" },
+                root_dir = lspconfig.util.root_pattern(".latexmkrc", ".git", "main.tex"),
+                settings = {
+                    texlab = {
+                        build = {
+                            executable = "latexmk",
+                            args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                            onSave = true,
+                        },
+                        forwardSearch = {
+                            executable = "zathura",
+                            args = { "--synctex-forward", "%l:1:%f", "%p" },
+                        },
+                        chktex = {
+                            onEdit = false,
+                            onOpenAndSave = true,
+                        },
+                        diagnosticsDelay = 300,
+                        latexFormatter = "latexindent",
+                        latexindent = {
+                            modifyLineBreaks = true,
+                        },
+                    },
+                },
+            })
 
             lspconfig.ts_ls.setup({
                 capabilities = capabilities,
@@ -123,6 +177,23 @@ return {
                 cmd = { "tinymist", },
                 filetypes = { "typst" },
                 root_dir = lspconfig.util.root_pattern("typst.toml", ".git") or vim.fn.getcwd(),
+            })
+
+            lspconfig.tinymist.setup({
+                capabilities = capabilities,
+                cmd = { "tinymist", },
+                filetypes = { "typst" },
+                root_dir = lspconfig.util.root_pattern("typst.toml", ".git") or vim.fn.getcwd(),
+            })
+
+            lspconfig.arduino_language_server.setup({
+                capabilities = capabilities,
+                cmd = {
+                    "arduino-language-server",
+                    "-cli-config", "/home/tim-price/.arduino15/arduino-cli.yaml",
+                    "-fqbn", "arduino:avr:uno",
+                    "-clangd", "/home/tim-price/.local/share/nvim/mason/bin/clangd"
+                },
             })
 
             lspconfig.clangd.setup({
