@@ -35,7 +35,8 @@ return {
                     "texlab",
                     "rust_analyzer",
                     "verible",
-                    "elixirls"
+                    "elixirls",
+                    "powershell_es",
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -55,7 +56,8 @@ return {
                 "rust_analyzer",
                 "arduino_language_server",
                 "texlab",
-                "elixirls"
+                "elixirls",
+                -- "powershell_es",
             }) do
                 lspconfig[server].setup({
                     capabilities = capabilities,
