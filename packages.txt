@@ -30,3 +30,4 @@ make
 g++
 bison
 flex
+tldr
