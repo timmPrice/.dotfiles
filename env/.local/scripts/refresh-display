@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+LAPTOP="eDP-1"
+EXTERNAL="DP-1"
+
+if xrandr | grep "$EXTERNAL connected" >/dev/null; then
+    xrandr --output $LAPTOP --auto \
+           --output $EXTERNAL --auto --right-of $LAPTOP
+else
+    xrandr --output $LAPTOP --auto \
+           --output $EXTERNAL --off
+fi

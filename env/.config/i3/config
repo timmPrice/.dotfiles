@@ -196,13 +196,9 @@ exec --no-startup-id sh -c "sleep 3 && pactl set-sink-volume @DEFAULT_SINK@ 118%
 for_window [class=".*"] border none
 
 # lockscreen bind
-<<<<<<< HEAD
 bindsym $mod+Ctrl+l exec systemctl sleep 
-=======
-
-bindsym $mod+Ctrl+l exec i3lock -c 000000
+# bindsym $mod+Ctrl+l exec i3lock -c 000000
 
 for_window [class="cs2"] fullscreen enable
 for_window [class="cs2"] floating enable
 for_window [class="cs2"] move to workspace 10: Game
->>>>>>> 0ff1cd77047377b44be590863a4fad2d2e1db5cc
