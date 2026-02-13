@@ -5,7 +5,7 @@ EXTERNAL=$(xrandr --query | awk -v laptop="$LAPTOP" '/ connected / && $1 != lapt
 
 if [ -n "$EXTERNAL" ]; then
     xrandr --output $LAPTOP --auto \
-        --output $EXTERNAL --auto --right-of $LAPTOP
+        --output $EXTERNAL --auto --above $LAPTOP
 else
     # xrandr --output $LAPTOP --auto
     xrandr --auto
