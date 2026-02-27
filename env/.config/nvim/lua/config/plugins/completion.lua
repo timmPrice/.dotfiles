@@ -4,7 +4,19 @@ return {
         dependencies = { 'rafamadriz/friendly-snippets' },
 
         config = function()
-            require("luasnip.loaders.from_vscode").lazy_load()
+            -- local ls = require("luasnip")
+            -- local s = ls.snippet
+            -- local t = ls.text_node
+            --
+            -- ls.add_snippets("all", {
+            --     s({
+            --         trg = "..",
+            --         -- wordTrig = false
+            --     }, {
+            --         t("·"),
+            --     })
+            -- })
+            -- require("luasnip.loaders.from_vscode").lazy_load()
         end,
     },
     {
@@ -14,7 +26,9 @@ return {
         version = '*',
 
         opts = {
-            keymap = { preset = 'enter' },
+            -- snippets = {
+            --     presets = "luasnip"
+            -- },
 
             appearance = {
                 use_nvim_cmp_as_default = true,
