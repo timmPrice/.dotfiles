@@ -143,22 +143,16 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -166,14 +160,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#         status_command i3status
-# }
 
+# idk what this is
 exec --no-startup-id xinput set-prop 12 "libinput Natural Scrolling Enabled" 1
 
+# files bind
 bindsym $mod+b exec nautilus
 
 # window colors
@@ -198,10 +189,20 @@ for_window [class=".*"] border none
 
 # lockscreen bind
 bindsym $mod+Ctrl+l exec systemctl sleep 
-# bindsym $mod+Ctrl+l exec i3lock -c 000000
 
-for_window [class="cs2"] fullscreen enable
-for_window [class="cs2"] floating enable
-for_window [class="cs2"] move to workspace 10: Game
-
+# wall paper
 exec_always --no-startup-id feh --bg-fill ~/repos/.dotfiles/.images/nobitches.png
+
+
+
+
+# --> SETUP DISPLAY APPLICATION DEFAULTS <-- #
+
+exec_always --no-startup-id i3-msg 'workspace 1; move workspace to output primary'
+exec_always --no-startup-id i3-msg 'workspace 3; move workspace to output primary'
+
+for_window [class="Firefox"] move to workspace 1
+for_window [class="kitty"] move to workspace 2
+for_window [class="obsidian"] move to workspace 3
+
+# fi

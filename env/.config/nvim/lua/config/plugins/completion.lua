@@ -26,9 +26,9 @@ return {
         version = '*',
 
         opts = {
-            -- snippets = {
-            --     presets = "luasnip"
-            -- },
+            snippets = {
+                preset = "luasnip"
+            },
 
             appearance = {
                 use_nvim_cmp_as_default = true,
@@ -42,6 +42,11 @@ return {
                 sources = {},
             },
             signature = { enabled = true },
+
+            keymap = {
+                preset = 'default',
+                ['<CR>'] = { 'accept', 'fallback' },
+            },
         },
     }
 }
