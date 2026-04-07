@@ -193,16 +193,15 @@ bindsym $mod+Ctrl+l exec systemctl sleep
 # wall paper
 exec_always --no-startup-id feh --bg-fill ~/repos/.dotfiles/.images/nobitches.png
 
+workspace 1 output DP-1
+workspace 2 output eDP-1
+workspace 3 output DP-1
 
+assign [class="firefox"] 1
+assign [class="kitty"] 2
+assign [class="obsidian"] 3
 
+exec_always no-startup-id Firefox
+exec_always no-startup-id kitty 
+exec_always no-startup-id obsidian
 
-# --> SETUP DISPLAY APPLICATION DEFAULTS <-- #
-
-exec_always --no-startup-id i3-msg 'workspace 1; move workspace to output primary'
-exec_always --no-startup-id i3-msg 'workspace 3; move workspace to output primary'
-
-for_window [class="Firefox"] move to workspace 1
-for_window [class="kitty"] move to workspace 2
-for_window [class="obsidian"] move to workspace 3
-
-# fi
