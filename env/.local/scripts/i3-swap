@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WIN2=$(i3-msg -t get_tree | jq '.. | objects | select(.type=="workspace" and .name=="2") | .nodes[0].id')
+
+i3-msg 'workspace 1'
+i3-msg 'move container to workspace 2'
+
+i3-msg "[con_id=$WIN2] move container to workspace 1"

@@ -205,3 +205,4 @@ exec_always no-startup-id Firefox
 exec_always no-startup-id kitty 
 exec_always no-startup-id obsidian
 
+bindsym $mod+Ctrl+space exec --no-startup-id ~/.local/scripts/i3-swap 
