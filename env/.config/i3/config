@@ -1,3 +1,7 @@
+exec --no-startup-id xrandr \
+  --output DP-1 --mode 3440x1440 --rate 120.00 --primary \
+  --output eDP-1 --mode 1920x1080 --rate 60.00 --right-of DP-1
+
 exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 239.76 --primary
 exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --primary
 exec --no-startup-id xset s off -dpms

@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
-WIN2=$(i3-msg -t get_tree | jq '.. | objects | select(.type=="workspace" and .name=="2") | .nodes[0].id')
+# Get current x-position of eDP-1 and DP-1
+EDP_X=$(xrandr --query | grep '^eDP-1' | grep -oP '\d+x\d+\+\K\d+' | head -1)
+DP_X=$(xrandr --query | grep '^DP-1' | grep -oP '\d+x\d+\+\K\d+' | head -1)
 
-i3-msg 'workspace 1'
-i3-msg 'move container to workspace 2'
-
-i3-msg "[con_id=$WIN2] move container to workspace 1"
+if [ "$EDP_X" -gt "$DP_X" ]; then
+    # eDP-1 is currently right of DP-1 -> swap so eDP-1 is left of DP-1
+    xrandr --output eDP-1 --mode 1920x1080 --rate 60.00 --left-of DP-1
+    xrandr --output DP-1 --mode 3440x1440 --rate 120.00 --primary
+else
+    # eDP-1 is currently left of DP-1 -> swap so eDP-1 is right of DP-1
+    xrandr --output DP-1 --mode 3440x1440 --rate 120.00 --primary
+    xrandr --output eDP-1 --mode 1920x1080 --rate 60.00 --right-of DP-1
+fi
