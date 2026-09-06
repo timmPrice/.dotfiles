@@ -7,7 +7,7 @@ return {
                 modules = {},
                 sync_install = false,
                 ignore_install = {},
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "elixir" },
+                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "elixir", "zig" },
                 auto_install = false,
                 highlight = {
                     enable = true,

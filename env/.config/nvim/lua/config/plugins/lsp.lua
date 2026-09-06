@@ -37,6 +37,7 @@ return {
                     "verible",
                     "elixirls",
                     "powershell_es",
+                    "zls",
                 },
                 automatic_installation = true,
                 automatic_enable = false,
@@ -57,6 +58,7 @@ return {
                 "arduino_language_server",
                 "texlab",
                 "elixirls",
+                "zls",
                 -- "powershell_es",
             }) do
                 lspconfig[server].setup({
